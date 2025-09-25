@@ -3,8 +3,8 @@ import {PropertyIntroductionSectionList} from "../../core/contence/PropertyIntro
 function PropertyIntroductionSection(){
     return(
         <>
-        <div className='py-10 px-8'>
-            <p className="HomePageSectionHeaders">در سقفینو به دنبال چه ملکی هستید</p>
+        <div className='py-6 px-8'>
+            <p className="HomePageSectionHeaders pb-6">در سقفینو به دنبال چه ملکی هستید</p>
             <div className=" flex flex-row-reverse gap-2">
                {
                 PropertyIntroductionSectionList.map((item,index)=>(
