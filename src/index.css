@@ -12,4 +12,7 @@
     .searchBoxIntroSection{
         @apply text-center w-1/2 font-semibold
     }
+    .HomePageSectionHeaders{
+        @apply text-2xl font-bold text-end py-8
+    }
 }

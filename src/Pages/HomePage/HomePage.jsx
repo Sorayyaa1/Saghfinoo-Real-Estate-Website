@@ -1,6 +1,6 @@
 import IntroSection from "../../Component/UI/IntroSection"
 import AdvertisementSection from "../../Component/UI/AdvertisementSection"
-
+import PropertyIntroductionSection from "../../Component/UI/PropertyIntroductionSection"
 
 function HomePage(){
     return(
@@ -8,6 +8,7 @@ function HomePage(){
            <div>
                <IntroSection />
                <AdvertisementSection />
+               <PropertyIntroductionSection />
            </div>
         </>
     )

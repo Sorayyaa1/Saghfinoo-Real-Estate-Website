@@ -4,7 +4,7 @@ function AdvertisementSection(){
     return (
         <>
         <div className='py-10 px-8'>
-            <p className='text-2xl font-bold text-end py-8'>سقفینو چطور به خانه دار شدن شما کمک می کند</p>
+            <p className='HomePageSectionHeaders'>سقفینو چطور به خانه دار شدن شما کمک می کند</p>
             <div className='flex flex-row-reverse gap-4'>
               {
                 AdvertisementSectionList.map((item,index)=>(
