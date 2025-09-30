@@ -7,10 +7,10 @@
         @apply box-border
     }
     .hedearButtons{
-        @apply hover:border-2 hover:border-red-500 hover:text-red-500 px-8 py-2 rounded-xl 
+        @apply hover:border-2 hover:border-red-500 hover:text-red-500 px-6 py-2 rounded-xl 
     }
     .searchBoxIntroSection{
-        @apply text-center w-1/2 font-semibold
+        @apply text-center w-1/2 font-semibold py-2 hover:border-b-2 border-red-500
     }
     .HomePageSectionHeaders{
         @apply text-2xl font-bold text-end

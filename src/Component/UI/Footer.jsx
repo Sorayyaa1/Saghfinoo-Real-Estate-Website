@@ -8,7 +8,7 @@ function Footer(){
         <>
         <div className='pt-6 px-8 bg-gray-100'>
             <p className="HomePageSectionHeaders text-center pb-6">سقفینو؛ سقفی ایده آل برای زندگی</p>
-            <div className='flex flex-row-reverse justify-between w-10/12 mx-auto border-b-2 border-gray-300 pb-6 px-8'>
+            <div onClick={ShowMore} className='flex flex-row-reverse justify-between w-10/12 mx-auto border-b-2 border-gray-300 pb-6 px-8'>
                 {
                  footerinfo.slice(0,3).map((item,index)=>(
                     <div key={index} className='flex flex-col justify-end gap-1'>

@@ -1,6 +1,9 @@
 import { Icons } from "./Icon/Icon"
+import UseRentBuyHook from "../../Hook/UseRentBuyHook"
+
 
 function IntroSection(){
+    const{rentBtn}=UseRentBuyHook()
     return(
         <>
         <div className=" bg-[url('/public/IntrosectionBackground.png')] bg-auto bg-center bg-no-repeat py-10 min-h-96">
@@ -9,9 +12,9 @@ function IntroSection(){
             <p>آسانی و سرعت در پیدا کردن یک سقف تازه را در سقفینو تجربه کنید</p>
            </div>
            <div className="bg-white w-1/2 mx-auto px-4 rounded-xl">
-               <div className="flex border-b-2 border-gray-200 py-2">
-                   <p className="searchBoxIntroSection">اجاره</p>
-                   <p className="searchBoxIntroSection">خرید</p>
+               <div className="flex border-b-2 border-gray-200">
+                   <button className="searchBoxIntroSection">خرید</button>
+                   <button className="searchBoxIntroSection" onClick={rentBtn}>اجاره</button> 
                </div>
                <div className="flex w-full flex-row-reverse items-center pb-2 mb-8">
                 <Icons icon={'searchIcon'} />

@@ -13,7 +13,7 @@ function Header (){
                 <div className="flex items-center">
                     {
                         HeaderLinks.map((item,index)=>(
-                           <Link to="" key={index} className="px-4 text-gray-800">{item}</Link>
+                           <Link to="" key={index} className=" text-gray-800 hedearButtons">{item}</Link>
                       ))
                     }
                     <div className="ps-4">
