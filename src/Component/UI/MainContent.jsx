@@ -1,32 +1,57 @@
-import AdvertisementSection from "../../Component/UI/AdvertisementSection"
-import PropertyIntroductionSection from "../../Component/UI/PropertyIntroductionSection"
-import ConsultationSection from "../../Component/UI/ConsultationSection"
-import RealEstateNewsSection from "../../Component/UI/RealEstateNewsSection"
-import UseRentBuyHook from "../../Hook/UseRentBuyHook"
+import { useState } from "react"
 import RentSection from "./RentSection"
+import InitialStateMainContent from "./InitialStateMainContent"
+import BuySection from "./BuySection"
+import { Icons } from "./Icon/Icon"
+
 
 function MainContent(){
-    const{isVisible}=UseRentBuyHook()
+    
+        const[selected,setSelected]=useState("")
+        const[getInput,setGetInput]=useState('')
+        
+        function getInputValue(e){
+            setGetInput(e.target.value)   
+        }
+        
+        function rentBtn(){
+            setSelected('RentingHome')      
+        }
+        
+        function buyBtn(){
+            setSelected('BuyingHome')
+        }
+        
     return(
         <>
-        <div>
-            
-            {
-            !isVisible && <div>
-                            <AdvertisementSection />
-                            <PropertyIntroductionSection />
-                            <ConsultationSection />
-                            <RealEstateNewsSection />
-                          </div>
-            }
-            <div>
-                {
-                    isVisible && <RentSection />
-                } 
+        <div className=" bg-[url('/public/IntrosectionBackground.png')] bg-auto bg-center bg-no-repeat py-10 min-h-96">
+            <div className="text-white font-semibold text-center pb-7 my-7">
+                <p className="pt-10 text-2xl pb-4">سقفینو، سقفی برای همه</p> 
+                <p>آسانی و سرعت در پیدا کردن یک سقف تازه را در سقفینو تجربه کنید</p>
             </div>
+            <div className="bg-white w-1/2 mx-auto px-5 rounded-xl">
+                <div className="flex border-b-2 border-gray-200">
+                    <button id="buyH" className="searchBoxIntroSection" onClick={buyBtn}>خرید</button>
+                    <button id="rentH" className="searchBoxIntroSection" onClick={rentBtn}>اجاره</button> 
+                </div>
+                <div className="flex w-full flex-row-reverse items-center pb-2 mb-8 px-2">
+                    <div className="w-3 h-3">
+                         <Icons icon={'searchIcon'} />
+                    </div>
+                    <input className=" pe-4 py-2 outline-none w-full placeholder-black text-end" type="text" placeholder="شهر مورد نظر را جستجو کنید" onChange={getInputValue}/>
+                    <div>
+                        {getInput}
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div>
+            {selected==="" && (<InitialStateMainContent />) }
+            {selected==="RentingHome" ? (<RentSection />) : (null)}
+            {selected==="BuyingHome" ? (<BuySection />) : (null)}          
         </div>
         </>
     )
 }
-
+//
 export default MainContent

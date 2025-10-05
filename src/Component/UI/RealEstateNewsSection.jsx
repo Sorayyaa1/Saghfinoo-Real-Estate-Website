@@ -10,21 +10,6 @@ import { Icons } from "./Icon/Icon";
 
 function RealEstateNewsSection(){
      
-    
-    // function SlideNextButton(){
-    //     const swiper=useSwiper();
-    //     // ()=>swiper.slideNext()
-    //   ()=>swiper.navigationNext()
-    // }
-
-    // function SlidePrevButton(){
-    //     const swiper=useSwiper();
-    //     ()=>swiper.slidePrev()
-    // }
-
-    
-
-   
     return(
         <>
            <div className='py-6 px-8'>

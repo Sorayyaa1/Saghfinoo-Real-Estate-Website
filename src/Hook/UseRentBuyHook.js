@@ -1,12 +1,24 @@
 import { useState } from "react"
 
+
 function UseRentBuyHook(){
-   const[isVisible,setIsVisible]=useState(false)
-    function rentBtn(){
-        setIsVisible(!isVisible)         
+   const[selected,setSelected]=useState('')
+   const[getInput,setGetInput]=useState('')
+
+    function getInputValue(e){
+        setGetInput(e.target.value)   
     }
 
-    return{rentBtn, isVisible}
+    function rentBtn(){
+        alert('test')
+        setSelected('RentingHome')       
+    }
+
+    function buyBtn(){
+        setSelected('BuyingHome')
+    }
+
+    return{rentBtn,getInput,getInputValue,buyBtn,selected}
 }
 
 export default UseRentBuyHook

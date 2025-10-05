@@ -15,4 +15,17 @@
     .HomePageSectionHeaders{
         @apply text-2xl font-bold text-end
     }
+    .footerInfoButton{
+        @apply flex items-center justify-end text-xs font-semibold text-red-700
+    }
+    .footerInfoTitles{
+        @apply font-semibold text-end text-sm pb-2
+    }
+    .footerInfoSubset{
+        @apply text-end text-gray-500 text-xs font-semibold py-1 block
+    }
+    .footerInfoSubsetcontainer{
+        @apply flex flex-col justify-end
+    }
+    
 }

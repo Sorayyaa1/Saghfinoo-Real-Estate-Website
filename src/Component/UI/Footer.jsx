@@ -1,62 +1,128 @@
+import {Link} from 'react-router-dom'
 import {footerinfo} from '../../core/contence/SaghfinooFooterInfo'
 import {serviceFooterLinks} from '../../core/contence/SaghfinooServicesFooter'
 import { Icons } from './Icon/Icon'
-
+import UseFooterHook from '../../Hook/UseFooterHook'
 
 function Footer(){
+    const{ShowMoreBtn1,ShowMoreBtn2,ShowMoreBtn3,isVisible,Display,preview}=UseFooterHook()
+
     return(
         <>
         <div className='pt-6 px-8 bg-gray-100'>
             <p className="HomePageSectionHeaders text-center pb-6">سقفینو؛ سقفی ایده آل برای زندگی</p>
-            <div onClick={ShowMore} className='flex flex-row-reverse justify-between w-10/12 mx-auto border-b-2 border-gray-300 pb-6 px-8'>
-                {
-                 footerinfo.slice(0,3).map((item,index)=>(
-                    <div key={index} className='flex flex-col justify-end gap-1'>
-                        <p className='font-semibold pb-4 text-end text-sm'>{item.title}</p>
-                        <div className='flex flex-col gap-1 '>
-                            {
-                                item.Subset.slice(0,3).map((item,index)=>(
-                                    <p key={index} className='text-gray-500 text-end text-sm'>{item}</p>
-                                ))
-                            }
-                        </div>
-                        <button> <span className='flex items-center justify-end text-sm text-red-700 '> <Icons icon={'dropdown'} />مشاهده بیشتر </span></button>
-                    </div>
-                    
-                 ))
-                }
-                <div>
-                    {
-                        footerinfo.slice(3).map((item)=>(
-                            <div>
-                                <p className='font-semibold pb-4 text-end text-sm'>{item.title}</p>
-                                <div className='flex flex-col gap-1'>
-                                    {
-                                        item.Subset.map((item,index)=>(
-                                            <div key={index} className='flex gap-2 justify-end'>
-                                                <p className='text-sm text-gray-500'>{item.title}</p>
-                                                <Icons icon={item.icon} />       
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                            </div>  
+            <div  className=' w-10/12 mx-auto border-b-2 border-gray-300 pb-6 '>
+                <div className='grid grid-cols-4 gap-4 px-8 w-11/12'>
+                   <div className='flex flex-col'>
+                       <p className='footerInfoTitles'>{footerinfo[0].title}</p>
+                        {footerinfo[0].Subset.map((item,index)=>(
+                            <div key={index} className='flex gap-2 justify-end'>
+                                <Link className='footerInfoSubset'>{item.title}</Link>
+                                <Icons icon={item.icon} />
+                            </div>
                         ))
-                    }
-                </div>
+                        }
+                   </div>
+                   <div className='footerInfoSubsetcontainer '>
+                        <p className='footerInfoTitles'>{footerinfo[1].title}</p>
+                         {
+                            isVisible ? (
+                                <div className='footerInfoSubsetcontainer'>
+                                    {
+                                    footerinfo[1].Subset.slice(0,3).map((item,index)=>(
+                                        <div key={index}>
+                                            <Link className='footerInfoSubset'>{item}</Link>
+                                        </div>
+                                    ))
+                                    }
+                                        <button onClick={ShowMoreBtn1}><span className='footerInfoButton'><Icons icon={'dropdown'}/>مشاده بیشتر</span></button>
+                                </div>
+                               
+                           ) : (
+                                <div className='footerInfoSubsetcontainer'>
+                                    {
+                                    footerinfo[1].Subset.map((item,index)=>(
+                                        <div key={index}>
+                                            <Link className='footerInfoSubset'>{item}</Link>
+                                        </div>
+                                    ))
+                                    }
+                                       <button onClick={ShowMoreBtn1}><span className='footerInfoButton'><Icons icon={'dropdown2'}/>مشاده کمتر</span></button>
+                                </div>
+                               
+                           )
+                         }    
+                   </div>
+                   <div className='footerInfoSubsetcontainer'>
+                       <p className='footerInfoTitles'>{footerinfo[2].title}</p>
+                        {
+                            Display ? (
+                                <div className='footerInfoSubsetcontainer'>
+                                    {
+                                    footerinfo[2].Subset.slice(0,3).map((item,index)=>(
+                                        <div key={index}>
+                                            <Link className='footerInfoSubset'>{item}</Link>
+                                        </div>
+                                    ))
+                                    }
+                                       <button onClick={ShowMoreBtn2}><span className='footerInfoButton'><Icons icon={'dropdown'}/>مشاده بیشتر</span></button>   
+                                </div>   
+                            ) : (
+                                <div className='footerInfoSubsetcontainer'>
+                                    {
+                                    footerinfo[2].Subset.map((item,index)=>(
+                                        <div key={index}>
+                                           <Link className='footerInfoSubset'>{item}</Link>
+                                        </div>
+                                   ))
+                                    }
+                                        <button onClick={ShowMoreBtn2}><span className='footerInfoButton'><Icons icon={'dropdown2'}/>مشاده کمتر</span></button> 
+                                </div>   
+                            )  
+                        }  
+                   </div>
+                   <div className='footerInfoSubsetcontainer'>
+                       <p className='footerInfoTitles'>{footerinfo[3].title}</p>
+                       {
+                        preview ? (
+                                <div className='footerInfoSubsetcontainer'>
+                                    {
+                                    footerinfo[3].Subset.slice(0,3).map((item,index)=>(
+                                        <div key={index}>
+                                            <Link className='footerInfoSubset'>{item}</Link>
+                                        </div>
+                                    ))
+                                    }
+                                        <button onClick={ShowMoreBtn3}><span className='footerInfoButton'><Icons icon={'dropdown'}/>مشاده بیشتر</span></button>
+                                    </div>      
+                        ) : (
+                            <div className='footerInfoSubsetcontainer'>
+                                {
+                                footerinfo[3].Subset.map((item,index)=>(
+                                    <div key={index}>
+                                        <Link className='footerInfoSubset'>{item}</Link>
+                                    </div>
+                                ))
+                                }
+                                    <button onClick={ShowMoreBtn3}><span className='footerInfoButton'><Icons icon={'dropdown2'}/>مشاده کمتر</span></button>
+                            </div>
+                        )   
+                        }
+                   </div>    
+               </div>
             </div>
             
 
-            
-            <div className='flex  w-10/12 mx-auto py-6 px-6 justify-between'>
+            <div className=' w-10/12 mx-auto py-6 '>
+                <div className='grid grid-cols-4 gap-4 px-8 w-11/12'>
                    {
                     serviceFooterLinks.map((item,index)=>(
                         <div key={index}>
-                            <p className='font-semibold pb-4 text-end text-sm'>{item.title}</p>
+                            <p className='footerInfoTitles'>{item.title}</p>
                             <div>
                                 {
                                     item.subset.map((item,index)=>(
-                                        <p key={index} className='text-gray-500 text-end text-sm'>{item}</p>
+                                        <Link key={index} className='footerInfoSubset'>{item}</Link>
                                     ))
                                 }
                             </div>
@@ -64,14 +130,16 @@ function Footer(){
                     ))
                    }
                 
-                    <div className='flex flex-col justify-end text-end w-1/5 '>
+                    <div className='flex flex-col justify-end text-end'>
                         <div className='flex justify-end'>
                             <Icons icon={'saghfinooLogo'}/>
                         </div>
-                        <p className='py-4 text-sm '>تجربه لذت خانه دار شدن سریع و آسان</p>
-                        <p className='text-sm text-gray-500'>سقفینو پلی است تا به سرعت در یبن هزاران آگهی ثبت شده جست و جو کنید.</p>
-                        <p className='text-sm text-gray-500 pt-1'>ملک مورد نظر را پیدا کنید و برای انجام معامله ای مطمئن، با مشاورین املاک معتمد و متخصص شهرتان در ارتباط باشید.</p>
+                        <p className='text-end text-xs font-semibold py-3 '>تجربه لذت خانه دار شدن سریع و آسان</p>
+                        <p className='footerInfoSubset'>سقفینو پلی است تا به سرعت در یبن هزاران آگهی ثبت شده جست و جو کنید.</p>
+                        <p className='footerInfoSubset'>ملک مورد نظر را پیدا کنید و برای انجام معامله ای مطمئن، با مشاورین املاک معتمد و متخصص شهرتان در ارتباط باشید.</p>
                     </div>
+            
+            </div>
             </div>
             <div className='w-1/2 mx-auto'>
                 <img src="/illustarion 2 1.png" alt="" />
