@@ -3,9 +3,7 @@ import {Navigation,Pagination,Scrollbar,A11y,Autoplay} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useSwiper } from "swiper/react";
 import {RealEstateNewsList} from "../../core/contence/RealEstateNewsSectionList"
-
 import { Icons } from "./Icon/Icon";
 
 function RealEstateNewsSection(){
