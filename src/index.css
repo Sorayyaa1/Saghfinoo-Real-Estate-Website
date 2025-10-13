@@ -25,7 +25,20 @@
         @apply text-end text-gray-500 text-xs font-semibold py-1 block
     }
     .footerInfoSubsetcontainer{
-        @apply flex flex-col justify-end
+        @apply flex flex-col justify-start gap-2
+    }
+    .dropdown{
+        @apply w-1/5 flex flex-col items-center text-gray-600 
+    }
+    .dropdown button{
+        @apply w-full border-2 border-gray-200 p-2 rounded-lg flex items-center text-center justify-center
+    }
+    .dropdown li{
+        @apply text-end py-0.5 cursor-pointer hover:bg-slate-100 px-2
+    }
+
+    .dropdown ul{
+        @apply w-full shadow-md shadow-slate-200 rounded-xl
     }
     
 }

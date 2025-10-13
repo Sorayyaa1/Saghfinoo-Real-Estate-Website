@@ -1,20 +1,16 @@
-import {Link} from "react-router-dom"
-import {NewestHousesForRent} from '../../core/contence/NewestHousesForRent'
+import {Link} from 'react-router-dom'
+import {newestHomesToBuyList} from '../../core/contence/NewestHomesToBuyList'
 import {Icons} from '../UI/Icon/Icon'
 
-function NewestHomesForRent(props){
-    const{getRentInput}=props
-   
-    return (
+function NewestHomesToBuy(props){
+    const{getBuyInput}=props
+    return(
         <>
-        <div className='py-6 px-8 font-Vazir'>
-            <div className="flex justify-between pt-8 p-4">
-                <button className="hedearButtons">مشاهده همه</button>
-                <p className='HomePageSectionHeaders'>جدیدترین خانه های اجاره ای <span className="ps-1"></span>{getRentInput}</p>
-            </div>
+        <div className='py-8 px-8 font-Vazir'>
+            <p className='HomePageSectionHeaders pb-6'>جدیدترین خانه ها برای خرید  <span className="ps-1"></span>{getBuyInput}</p>
             <div className='grid grid-cols-4 gap-2 '>
                 {
-                    NewestHousesForRent.map((item,index)=>(
+                    newestHomesToBuyList.map((item,index)=>(
                         <div key={index} className='rounded-xl border-2 border-gray-100'>
                             <div className='relative min-h-9'>
                                 <Link to=""><img src={item.image} alt="" className='rounded-t-xl'/></Link>
@@ -23,15 +19,15 @@ function NewestHomesForRent(props){
                             <div className='px-2 py-4 min-h-20'>
                                 <div className='flex justify-between py-1'>
                                     <Icons icon={'marked'} />
-                                    <p className='text-gray-400 text-sm'>رهن و اجاره آپارتمان <span>{getRentInput}</span></p>
+                                    <p className='text-gray-400 text-sm'> خرید آپارتمان <span>{getBuyInput}</span></p>
                                 </div>
                                 <div className="flex justify-end text-gray-600">
                                     <p>{item.address}</p>
                                     <p className='ps-1 text-end'> ،متر {item.meterage} </p> 
                                 </div>
                                 <div className='flex flex-col items-end font-semibold'>
-                                    <p>{item.mortgagePrice} تومان رهن</p>
-                                    <p>{item.rentalPrice} تومان اجاره</p>
+                                    <p>{item.priceOfBuying} تومان </p>
+                                    
                                 </div>
                             </div>
                             
@@ -44,4 +40,4 @@ function NewestHomesForRent(props){
     )
 }
 
-export default NewestHomesForRent
+export default NewestHomesToBuy

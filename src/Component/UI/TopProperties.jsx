@@ -7,11 +7,20 @@ import "swiper/css/pagination";
 import { Icons } from "./Icon/Icon";
 import {topPropertiesList} from '../../core/contence/TopPropertiesList'
 
-function TopProperties(){
+function TopProperties({getBuyInput,getRentInput,selected}){
     return(
         <>
         <div className='py-6 px-8 font-Vazir'>
-            <p className="HomePageSectionHeaders pb-6"><span></span>املاک برتر </p>
+            <p className="HomePageSectionHeaders pb-6">املاک برتر
+                {
+                    selected==="RentingHome" &&
+                       <span className="px-2">{getRentInput}</span>
+                }
+                {
+                    selected==="BuyingHome" && 
+                       <span className="px-2">{getBuyInput}</span>
+                }
+            </p>
             <div className=" flex gap-2 items-center justify-start relative">
                 <Swiper 
                 modules={[Pagination,Navigation,Scrollbar,A11y,Autoplay]} 

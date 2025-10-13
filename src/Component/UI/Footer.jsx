@@ -13,7 +13,7 @@ function Footer(){
             <p className="HomePageSectionHeaders text-center pb-6">سقفینو؛ سقفی ایده آل برای زندگی</p>
             <div  className=' w-10/12 mx-auto border-b-2 border-gray-300 pb-6 '>
                 <div className='grid grid-cols-4 gap-4 px-8 w-11/12'>
-                   <div className='flex flex-col'>
+                   <div className='flex flex-col gap-2'>
                        <p className='footerInfoTitles'>{footerinfo[0].title}</p>
                         {footerinfo[0].Subset.map((item,index)=>(
                             <div key={index} className='flex gap-2 justify-end'>
@@ -114,12 +114,12 @@ function Footer(){
             
 
             <div className=' w-10/12 mx-auto py-6 '>
-                <div className='grid grid-cols-4 gap-4 px-8 w-11/12'>
+                <div className='grid grid-cols-4 gap-6 px-8 w-11/12'>
                    {
                     serviceFooterLinks.map((item,index)=>(
                         <div key={index}>
                             <p className='footerInfoTitles'>{item.title}</p>
-                            <div>
+                            <div className='flex flex-col gap-2'>
                                 {
                                     item.subset.map((item,index)=>(
                                         <Link key={index} className='footerInfoSubset'>{item}</Link>

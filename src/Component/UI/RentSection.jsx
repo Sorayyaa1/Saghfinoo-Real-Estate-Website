@@ -4,15 +4,15 @@ import SuggestedSearches from "./SuggestedSearches"
 import TopProperties from "./TopProperties"
 import TopConsultants from "./TopConsultants"
 
-function RentSection(){
+function RentSection({getRentInput,selected}){
     return(
         <>
         <div>
-            <NewestHomesForRent />
+            <NewestHomesForRent getRentInput={getRentInput}/>
             <AdviceForRent />
             <SuggestedSearches />
-            <TopProperties />
-            <TopConsultants />
+            <TopProperties getRentInput={getRentInput} selected={selected}/>
+            <TopConsultants getRentInput={getRentInput} selected={selected}/>
         </div>
         </>
     )
