@@ -18,7 +18,7 @@ function NewestHomesForRent(props){
                         <div key={index} className='rounded-xl border-2 border-gray-100'>
                             <div className='relative min-h-9'>
                                 <Link to=""><img src={item.image} alt="" className='rounded-t-xl'/></Link>
-                                <p className='bg-inherit text-white p-1 absolute z-10 top-2 left-2'>2 ساعت پیش</p>    
+                                <p className='bg-inherit text-white p-1 absolute z-10 top-2 left-2'>۲ ساعت پیش</p>    
                             </div>
                             <div className='px-2 py-4 min-h-20'>
                                 <div className='flex justify-between py-1'>

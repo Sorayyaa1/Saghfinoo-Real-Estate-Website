@@ -4,7 +4,7 @@ import InitialStateMainContent from "./InitialStateMainContent"
 import BuySection from "./BuySection"
 import { Icons } from "./Icon/Icon"
 import Modal from "../../Context/Modal"
-import PropertyRental from "./PropertyRental"
+
 
 
 function MainContent(){

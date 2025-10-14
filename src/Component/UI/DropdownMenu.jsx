@@ -51,7 +51,7 @@ function DropDown(){
                 }
             </div>
             <div className="dropdown">
-                <button onClick={openDropdwon2}>
+                <button onClick={openDropdwon2} >
                     <Icons icon={"blackDropdown"} />
                     <p>{PropertyRentalBtns[1].title}</p>
                 </button>
