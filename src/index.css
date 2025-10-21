@@ -30,15 +30,51 @@
     .dropdown{
         @apply w-1/5 flex flex-col items-center text-gray-600 
     }
-    .dropdown button{
+    .drpodownBtn{
         @apply w-full border-2 border-gray-200 p-2 rounded-lg flex items-center text-center justify-center
     }
     .dropdown li{
-        @apply text-end py-0.5 cursor-pointer hover:bg-slate-100 px-2
+        @apply text-end py-0.5 cursor-pointer hover:bg-red-50 px-2
     }
 
     .dropdown ul{
         @apply w-full shadow-md shadow-slate-200 rounded-xl
+    }
+    .areaBtns{
+        @apply  text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white py-1 w-1/2 rounded-lg
+    }
+    .areaInput{
+        @apply checked:bg-red-600 outline-none
+    }
+    .from-to{
+        @apply bg-red-500 text-white text-center h-10 w-14 rounded-e-md
+    }
+    .Tooman-metr{
+        @apply text-gray-400 text-center h-10 w-14 mx-1
+    }
+    .InternalDiv{
+        @apply flex rounded-md w-2/5 items-center justify-center border-2 border-gray-200
+    }
+    .MoreFilterBtns{
+        @apply  flex justify-between border-2 border-gray-300  rounded-md text-gray-400 text-sm py-2 px-4
+    }
+    .propertyFilterDiv{
+        @apply flex flex-row-reverse rounded-md
+    }
+    .propertyFilterDiv button{  
+        @apply border-2 border-gray-100 px-4 py-1 hover:bg-gray-100 text-xs bg-white focus:bg-red-600 focus:border-red-600 focus:text-white
+    }
+    .propertyFilterDiv button:first-of-type{ 
+        @apply rounded-e-md
+    }
+     .propertyFilterDiv button:last-of-type{ 
+        @apply rounded-s-md
+    }
+    .filter-search{
+        @apply flex justify-center gap-4 p-2 mx-auto
+    }
+    .filter-search button{
+        @apply px-4 py-1 border-2 border-gray-100 rounded-md text-xs focus:bg-red-600 focus:border-red-600 focus:text-white
     }
     
 }

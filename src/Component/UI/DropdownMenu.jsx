@@ -1,6 +1,9 @@
 import {useState } from "react"
 import {PropertyRentalBtns} from "../../core/contence/PropertyRental"
 import { Icons } from "./Icon/Icon"
+import PropertyFilter from "./propertyFilter"
+import UsePropertyFilterHook from "../../Hook/UsePropertyFilterHook"
+import MoreFilter from "./MoreFilter"
 
 function DropDown(){
     const[openItem1,setOpenItem1]=useState(false)
@@ -8,6 +11,7 @@ function DropDown(){
     const[openItem3,setOpenItem3]=useState(false)
     const[openItem4,setOpenItem4]=useState(false)
     const[openItem5,setOpenItem5]=useState(false)
+    const{show,setShow}=UsePropertyFilterHook
 
     function openDropdwon1(){
         setOpenItem1(!openItem1)
@@ -33,41 +37,43 @@ function DropDown(){
 
     return(
         <>
-         <div className="flex flex-row-reverse gap-2">
+         <div className="flex flex-row-reverse gap-2 relative">
             <div className="dropdown">
-                <button onClick={openDropdwon1}>
+                <button onClick={openDropdwon1} className="drpodownBtn">
                     <Icons icon={"blackDropdown"} />
                     <p>{PropertyRentalBtns[0].title}</p>
                 </button>
                 {
                     openItem1 &&
-                        <ul>
+                        <ul className="p-2">
                             {
                                 PropertyRentalBtns[0].subset.map((item,index)=>(
-                                    <li key={index} value={item}>{item}</li>
+                                    <li key={index} value={item}>
+                                        {item}
+                                        <input type="checkbox" className="ms-2 areaInput"/>    
+                                    </li>
                                 ))
                             }
+                            <div className="flex gap-2">
+                                <button className="areaBtns">انتخاب</button>
+                                <button className="areaBtns">حذف</button>
+                            </div>
                         </ul>
                 }
+                
             </div>
             <div className="dropdown">
-                <button onClick={openDropdwon2} >
+                <button onClick={openDropdwon2} className="drpodownBtn">
                     <Icons icon={"blackDropdown"} />
                     <p>{PropertyRentalBtns[1].title}</p>
                 </button>
                 {
                     openItem2 &&
-                        <ul>
-                            {
-                                PropertyRentalBtns[1].subset.map((item,index)=>(
-                                    <li key={index} value={item}>{item}</li>
-                                ))
-                            }
-                        </ul>
+                        <PropertyFilter className="absolute" openItem={openItem2} openDropdwon={openDropdwon2}/>
                 }
             </div>
              <div className="dropdown">
-                <button onClick={openDropdwon3}>
+                <button onClick={openDropdwon3} className="drpodownBtn">
                     <Icons icon={"blackDropdown"} />
                     <p>{PropertyRentalBtns[2].title}</p>
                 </button>
@@ -83,7 +89,7 @@ function DropDown(){
                 }
             </div>
              <div className="dropdown">
-                <button onClick={openDropdwon4}>
+                <button onClick={openDropdwon4} className="drpodownBtn">
                     <Icons icon={"blackDropdown"} />
                     <p>{PropertyRentalBtns[3].title}</p>
                 </button>
@@ -99,19 +105,13 @@ function DropDown(){
                 }
             </div>
              <div className="dropdown">
-                <button onClick={openDropdwon5}>
+                <button onClick={openDropdwon5} className="drpodownBtn">
                     <p>{PropertyRentalBtns[4].title}</p>
                     <Icons icon={"filterIcon"}/>
                 </button>
                 {
                     openItem5 &&
-                        <ul>
-                            {
-                                PropertyRentalBtns[4].subset.map((item,index)=>(
-                                    <li key={index} value={item}>{item}</li>
-                                ))
-                            }
-                        </ul>
+                        <MoreFilter className="absolute" />
                 }
             </div>
             

@@ -2,6 +2,9 @@ import {useState } from "react"
 import PropertyRental from '../../Component/UI/PropertyRental'
 import AssociatedRealEstateOffice from '../../Component/UI/AssociatedRealEstateOffice'
 import MoreHomeForRent from '../../Component/UI/MoreHomeForRent'
+import RelatedProperties from '../../Component/UI/RelatedProperties'
+import ListOfHousesAvailableForRent from '../../Component/UI/ListOfHousesAvailableForRent'
+import Paginations from "../../Component/UI/Pagination"
 
 function RentPage(){
 
@@ -13,10 +16,13 @@ function RentPage(){
 
     return(
         <>
-        <div>
-            <PropertyRental Input={Input} InputValue={InputValue}/>
-            <AssociatedRealEstateOffice />
+        <div className="relative">
+            <PropertyRental Input={Input} InputValue={InputValue} className="absolute z-10"/>
+            <AssociatedRealEstateOffice className="absolute" />
             <MoreHomeForRent Input={Input} InputValue={InputValue}/>
+            <RelatedProperties />
+            <ListOfHousesAvailableForRent />
+            <Paginations Input={Input}/>
         </div>
         </>
     )

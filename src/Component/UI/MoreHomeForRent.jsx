@@ -32,7 +32,7 @@ function MoreHomeForRent({Input}){
                                             <Icons icon={'marked'} />
                                             <p className='text-gray-400 text-sm'>رهن و اجاره آپارتمان <span>{Input}</span></p>
                                         </div>
-                                    <div className="flex text-gray-600">
+                                    <div className="flex text-gray-600 justify-end">
                                         <p className="text-end">{item.address}</p>
                                         <p className='ps-1 text-end'>،متر{item.meterage} </p> 
                                     </div>

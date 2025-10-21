@@ -1,4 +1,4 @@
-import {useState } from "react"
+
 import {Link} from "react-router-dom"
 import DropDown from "./DropdownMenu"
 import { Icons } from "./Icon/Icon"
@@ -6,7 +6,7 @@ import LocationMarker from "./Location"
 import {HousesForRent} from '../../core/contence/HomesForRent'
 
 function PropertyRental({Input,InputValue}){
-
+    const count=Math.ceil(Math.random()*90)
     return(
         <>
         <div className='py-6 px-8 font-Vazir'>
@@ -23,10 +23,10 @@ function PropertyRental({Input,InputValue}){
                 </div>
             </div>
             <div className="flex gap-4 pt-8"> 
-                <div className="h-auto top-0">
-                    <LocationMarker Input={Input} className="w-1/2"/>
+                <div className="flex flex-col items-center">
+                    <LocationMarker Input={Input}/>
                 </div>
-                <div className="h-auto top-0">
+                <div style={{height:'400px'}}>
                     <p className="text-xl font-semibold text-end">املاک اجاره ای</p>
                     <div className="flex justify-between py-4">
                         <button className="border-2 border-gray-200 p-2 rounded-lg flex items-center text-center text-gray-600 justify-center bg-gray-100">
@@ -34,7 +34,7 @@ function PropertyRental({Input,InputValue}){
                             <span className="px-2">جدیدترین</span>
                             <Icons icon={"moreIcon"} />
                         </button>
-                        <p className="text-red-600"> <span className="pe-2">4876</span>مورد یافت شد</p>    
+                        <p className="text-red-600"> <span className="pe-2">{count}</span>مورد یافت شد</p>    
                     </div>
                     <div className='grid grid-cols-2 gap-2 '>   
                     {
@@ -49,9 +49,9 @@ function PropertyRental({Input,InputValue}){
                                     <Icons icon={'marked'} />
                                     <p className='text-gray-400 text-sm'>رهن و اجاره آپارتمان <span>{Input}</span></p>
                                 </div>
-                                <div className="flex text-gray-600">
-                                    <p className="text-end">{item.address}</p>
-                                    <p className='ps-1 text-end'>،متر{item.meterage} </p> 
+                                <div className="flex text-gray-600 justify-end">
+                                    <p className=" text-end">{item.address}</p>
+                                    <p className=' ps-1 text-end'>،متر{item.meterage} </p> 
                                 </div>
                                 <div className='flex flex-col items-end font-semibold'>
                                     <p>{item.mortgagePrice} تومان رهن</p>

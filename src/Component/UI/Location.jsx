@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer,Marker, Popup } from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
 import { useState,useEffect } from 'react'
-import { data } from 'react-router-dom'
+
 
 
 function LocationMarker({Input}){
@@ -25,30 +25,37 @@ function LocationMarker({Input}){
      fetchData()
 },[Input])
     // const position = [51.505, -0.09]
-    
+    // const map=new L.Map("map",{
+    //     attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //     url:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    //     center:[35.7219, 51.3347],
+    //     zoom:13
+    // })
+    // L.marker([34.7219, 50.3347].addTo(map)),
+    // L.marker([33.7219, 49.3347].addTo(map)),
+    // L.marker([34.0019, 50.0047].addTo(map))
+
     return(
-        <>
-        <MapContainer center={Position} zoom={13} scrollWheelZoom={true}
+        
+        <MapContainer id='map' center={Position} zoom={13} scrollWheelZoom={true}
                         doubleClickZoom={true}
                         zoomControl={true}
                         dragging={true}
-                        style={{width:'100%',height:'100%'}}>
+                        style={{width:'695px',height:'695px'}}>
             <TileLayer 
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker position={Position} 
-                eventHandlers={{
-                    click: () => {
-                       console.log('marker clicked')
-                    },
-            }}>
+           
+           >
                 <Popup>
-                   jgjggkgkgk
+                   hhh
                 </Popup>
             </Marker>
+            
         </MapContainer>
-        </>
+        
     )
 }
 
