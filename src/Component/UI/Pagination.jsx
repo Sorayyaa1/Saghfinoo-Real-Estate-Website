@@ -1,6 +1,6 @@
 import { Pagination } from "flowbite-react"
 import { useState,useEffect } from "react"
-
+import { Link } from "react-router-dom"
 
 function Paginations({Input}){
     const[currentPage,setCurrentPage]=useState(1)
@@ -8,7 +8,7 @@ function Paginations({Input}){
     const[paginationArray,setPaginationArray]=useState([])
 
 
-    useEffect(()=>{
+    const TotalPage=useEffect(()=>{
         setTotalPage(Math.ceil(Math.round()*30))
     },[Input])
      
@@ -17,17 +17,17 @@ function Paginations({Input}){
         setCurrentPage(page)
     }
 
-    function createArray(totalPage){
-        for(let i=1;i<=totalPage;i++){
+    function createArray(value=TotalPage){
+        for(let i=1;i<=value;i++){
         paginationArray.push([i])
-        console.log(paginationArray)
+        
     }}
     createArray()
-
+    console.log(paginationArray)
     return(
         <>
-        <div className="flex overflow-x-auto sm:justify-center">
-        <Pagination
+        <div className="flex flex-row sm:justify-center">
+        {/* <Pagination
         layout="pagination"
         currentPage={currentPage}
         totalPages={10}
@@ -35,10 +35,18 @@ function Paginations({Input}){
         previousLabel=""
         nextLabel=""
         shape="rounded"
-        pageSize="px-4 py-2"
         showIcons
         className=" border-2 border-green-400"
-      />
+      /> */}
+         <ul className=" flex gap-4">
+            {
+                paginationArray.map((item,index)=>(
+                    <li key={index} className="p-2 border-2 border-gray-100 rounded-md">
+                        <Link to="rent/propertyNotFond">{item}</Link>
+                    </li>
+                ))
+            }
+         </ul>
         </div>
         </>
     )

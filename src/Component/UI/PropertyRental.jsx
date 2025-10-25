@@ -6,7 +6,9 @@ import LocationMarker from "./Location"
 import {HousesForRent} from '../../core/contence/HomesForRent'
 
 function PropertyRental({Input,InputValue}){
+
     const count=Math.ceil(Math.random()*90)
+   
     return(
         <>
         <div className='py-6 px-8 font-Vazir'>
@@ -41,7 +43,7 @@ function PropertyRental({Input,InputValue}){
                     HousesForRent.slice(0,4).map((item,index)=>(
                         <div key={index} className='rounded-xl border-2 border-gray-100'>
                             <div className='relative min-h-9'>
-                                <Link to=""><img src={item.image} alt="" className='rounded-t-xl'/></Link>
+                                <Link to={`/rent/${item.id}`}><img src={item.image} alt="" className='rounded-t-xl'/></Link>
                                 <p className='bg-inherit text-white p-1 absolute z-10 top-2 left-2'> ساعت پیش <span>{item.uploadTime}</span></p>    
                             </div>
                             <div className='px-2 py-4 min-h-20'>

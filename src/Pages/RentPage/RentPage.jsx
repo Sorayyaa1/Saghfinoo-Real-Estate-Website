@@ -16,9 +16,9 @@ function RentPage(){
 
     return(
         <>
-        <div className="relative">
-            <PropertyRental Input={Input} InputValue={InputValue} className="absolute z-10"/>
-            <AssociatedRealEstateOffice className="absolute" />
+        <div>
+            <PropertyRental Input={Input} InputValue={InputValue}/>
+            <AssociatedRealEstateOffice/>
             <MoreHomeForRent Input={Input} InputValue={InputValue}/>
             <RelatedProperties />
             <ListOfHousesAvailableForRent />

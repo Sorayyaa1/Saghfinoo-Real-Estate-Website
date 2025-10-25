@@ -11,7 +11,7 @@ function LocationMarker({Input}){
         try{
             const res= await fetch(`https://geocode.maps.co/search?q=${Input}&api_key=68ecca4c5cc3e657295131veubfbe8e`)
             const data=await res.json()
-            console.log(data)
+            // console.log(data)
             const la=data.lat
             const lo=data.lon
             // const Loc=[la,lo]

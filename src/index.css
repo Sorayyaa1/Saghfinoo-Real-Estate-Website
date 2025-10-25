@@ -76,5 +76,20 @@
     .filter-search button{
         @apply px-4 py-1 border-2 border-gray-100 rounded-md text-xs focus:bg-red-600 focus:border-red-600 focus:text-white
     }
-    
+    .homeFacilities div{
+        @apply flex gap-2 justify-end
+    }
+    .homeDetailsTitle{
+        @apply font-semibold text-end py-6 text-lg
+    }
+    .AdInfo{
+        @apply flex justify-between py-8
+    }
+    .AdInfo p{
+        @apply px-1
+    }
+    .AdInfo span{
+        @apply px-1 font-semibold
+    }
+   
 }
